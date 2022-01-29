@@ -3,12 +3,22 @@ import './App.css';
 import Header from './MyComponents/Header';
 import { Todos } from './MyComponents/Todos';
 import { Footer } from './MyComponents/Footer';
+import React, {useState} from 'react';   // to delete todos from the website 
 
 
 
 function App() {
 
-  let todos = [
+  const onDelete = (todo) => {
+    console.log("I am on delete", todo);
+    setTodos(todos.filter( (e) => {
+      return e!==todo;
+    }))
+  }
+
+
+
+  const [todos, setTodos] = useState([
     {
       sno: 1,
       title: "Push on Github",
@@ -24,14 +34,14 @@ function App() {
       title: "title3",
       desc: "desc3"  
     },
-  ]
+  ])
 
 
 
   return (
     <>
       <Header title="MyTodosList" searchbar={false}/>
-      <Todos todos={todos}/>
+      <Todos todos={todos} onDelete={onDelete}/>
       <Footer/>
     </>
   );
