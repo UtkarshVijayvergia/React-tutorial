@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './AddTodo.css';
 
 
 
@@ -21,14 +22,14 @@ export const AddTodo = (props) => {
 
   return (
     <>
-        <div className="text-light">
+        <div className="text-light container">
             <h3 className='my-3'>Add New Todo</h3>
             <br />
             <form onSubmit={submitter}>
                 
-                <div className="mb-3 bg-dark text-light">
+            <div className="mb-3 bg-dark text-light">
                     <label htmlFor="title" className="form-label">Todo Title</label>
-                    <input type="text" value={title} onChange={(e)=> {setTitle(e.target.value)}} className="form-control" id="title" size="60" placeholder='Add Todo Title'/>
+                    <input type="text" value={title} onChange={(e)=> {setTitle(e.target.value)}}  className="form-control" id="desc" size="60" placeholder='Add Todo Title'/>
                                                                 {/*  setTitle is a useState const made above  */}  
                 </div>
                 
@@ -45,6 +46,7 @@ export const AddTodo = (props) => {
                 <button type="submit" className="btn btn-success">Add Todo</button>
             
             </form>
+            <br />
         </div>
     </>
   );

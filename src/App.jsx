@@ -66,7 +66,7 @@ function App() {
 
   const adder = (title,desc) => {
     let sno;
-    if(todos.length==0){
+    if(todos.length===0){
       sno = 1
     }
     else{
@@ -90,10 +90,13 @@ function App() {
       <div className='bg-dark'>
         <br /><br />
 
-        <div className='flexbox-container'>
+        <div className='left-container flexbox-container'>
 
-          <div><AddTodo className="split-left" adder={adder}/></div>
-          <div><Todos className="split-right" todos={todos} onDelete={onDelete}/></div>
+          <div><AddTodo className="split-left left-padder" adder={adder}/></div>
+          <>
+            <br /><br /><br />
+          </>
+          <div><Todos className="split-right right-padder" todos={todos} onDelete={onDelete}/></div>
 
         </div>
 
