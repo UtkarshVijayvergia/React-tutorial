@@ -29,10 +29,10 @@ function App() {
     setTodos(todos.filter((e) => {
       return e !== todo;
     }));
-    console.log("deleted", todos)
-    localStorage.setItem("todos", JSON.stringify(todos));   // local storage means.....even after reload todos will still be there
-                                                            // setItem used to get the items of array todos and print on website
-                                                            // json.stringify -- search on net
+    // console.log("deleted", todos)
+                                                            // local storage means.....even after reload todos will still be there
+    localStorage.setItem("todos", JSON.stringify(todos));   // setItem used to get the items of array todos and print on website
+                                                            // json.stringify -- search on net  
   }
 
 
@@ -42,25 +42,6 @@ function App() {
   useEffect(() => {                                           // used useEffect hook.....also import it before use 
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos])
-
-
-  // const [todos, setTodos] = useState([
-  //   {
-  //     sno: 1,
-  //     title: "Push on Github",
-  //     desc: "Push your first react app code on github today"  ,
-  //   },
-  //   {
-  //     sno:2,
-  //     title: "Open Source contribution",
-  //     desc: "Find an open source project and contribute"  ,
-  //   },
-  //   {
-  //     sno: 3,
-  //     title: "title3",
-  //     desc: "desc3"  ,
-  //   },
-  // ])
 
 
 
@@ -78,7 +59,7 @@ function App() {
       desc: desc,
     }
     setTodos([...todos, myTodo]);    // to add the new myTodo inside todos dict
-    console.log("Added: ", myTodo);
+    // console.log("Added: ", myTodo);
   }
 
 
@@ -92,11 +73,11 @@ function App() {
 
         <div className='left-container flexbox-container'>
 
-          <div><AddTodo className="split-left left-padder" adder={adder}/></div>
-          <>
-            <br /><br /><br />
-          </>
-          <div><Todos className="split-right right-padder" todos={todos} onDelete={onDelete}/></div>
+          <div><AddTodo className="split-left leftPadder" adder={adder}/></div>
+
+          <div className='padder'></div>
+
+          <div><Todos className="split-right rightPadder" todos={todos} onDelete={onDelete}/></div>
 
         </div>
 

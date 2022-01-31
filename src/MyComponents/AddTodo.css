@@ -1,25 +1,19 @@
+.sizer{
+    width: 450px;
+}
 
 
-/* width */
 .container{
-    border: #555 solid;
-    padding-right: 4000px;
-}
-.container::-webkit-scrollbar {
-  width: 10px;
+    border: #555 4px solid;
+    /* padding: 70 px; */
 }
 
-/* Track */
-.container::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-.container::-webkit-scrollbar-thumb {
-  background: #888; 
+h3{
+    padding-bottom: 9px;
+    border-bottom: #555 4px solid;
 }
 
-/* Handle on hover */
-.container::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+.text-padder{
+    padding-left: 15px;
+    padding-right: 15px;
 }

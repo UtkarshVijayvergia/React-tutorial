@@ -21,30 +21,34 @@ export const AddTodo = (props) => {
 
 
   return (
-    <>
-        <div className="text-light container">
-            <h3 className='my-3'>Add New Todo</h3>
+    <><br /><br />
+        <div className="text-light container text-padder">
+            <h3 className='my-3 text-center'>Add New Todo</h3>
             <br />
             <form onSubmit={submitter}>
                 
-            <div className="mb-3 bg-dark text-light">
+            <div className="mb-3 bg-dark text-light sizer">
                     <label htmlFor="title" className="form-label">Todo Title</label>
                     <input type="text" value={title} onChange={(e)=> {setTitle(e.target.value)}}  className="form-control" id="desc" size="60" placeholder='Add Todo Title'/>
                                                                 {/*  setTitle is a useState const made above  */}  
                 </div>
                 
-                <div className="mb-3 bg-dark text-light">
+                <div className="mb-3 bg-dark text-light sizer">
                     <label htmlFor="desc" className="form-label">Todo Description</label>
-                    <input type="text" value={desc} onChange={(e)=> {setDesc(e.target.value)}}  className="form-control" id="desc" size="60" placeholder='Add Todo Description'/>
+                  <input type="text" value={desc} onChange={(e)=> {setDesc(e.target.value)}}  className="form-control" id="desc" size="60" placeholder='Add Todo Description'/>
                 </div>
                 
                 {/* <div className="mb-3 form-check bg-dark text-light">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                 </div> */}
+
+                <br />
                 
-                <button type="submit" className="btn btn-success">Add Todo</button>
-            
+                <center>
+                    <button type="submit" className="btn btn-success">Add Todo</button>
+                </center>
+
             </form>
             <br />
         </div>

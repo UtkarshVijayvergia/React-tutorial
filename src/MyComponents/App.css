@@ -1,16 +1,10 @@
 .flexbox-container {
     display: flex;
-    flex: 1;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content:space-between;
     padding:0 70px 0 70px;
 }
 
-/* .left-container {
-    padding-left: 50px;
-    padding-right: 50px;
+.padder{
+    margin: 80px;
 }
-
-.left-padder{
-
-} */
