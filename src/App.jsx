@@ -5,9 +5,15 @@ import { Todos } from './MyComponents/Todos';
 import { Footer } from './MyComponents/Footer';
 import './MyComponents/App.css'
 import { AddTodo } from './MyComponents/AddTodo';
+import { About } from './MyComponents/About';
+
 import React, { useState, useEffect } from 'react';     // to use "useState hooks" to delete todos from the website 
                                                         // to use "useEffect hook" to get the todo array memory after reload
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
@@ -66,25 +72,35 @@ function App() {
 
   return (
     <>
-      <Header title="MyTodosList" searchbar={false}/>
-
       <div className='bg-dark'>
-        <br /><br />
+        <Router>
+          <Header title="MyTodosList" searchbar={false}/>
 
-        <div className='left-container flexbox-container'>
+            <Routes>
 
-          <div><AddTodo className="split-left leftPadder" adder={adder}/></div>
+              <Route exact path="/" element = {
+                  <>
+                    <br /><br />
+                    <div className='left-container flexbox-container'>
+                      <div><AddTodo className="split-left leftPadder" adder={adder}/></div>
+                      <div className='padder'></div>
+                      <div><Todos className="split-right rightPadder" todos={todos} onDelete={onDelete}/></div>
+                    </div>
+                  </>
+              }>
+              </Route>
 
-          <div className='padder'></div>
 
-          <div><Todos className="split-right rightPadder" todos={todos} onDelete={onDelete}/></div>
+              <Route exact path="/about" element = {<About />} >
+              </Route>
+            
+            </Routes>
 
-        </div>
+          <Footer/>
 
-        <Footer/>
+        </Router>
 
       </div>
-
     </>
   );
 }
@@ -94,3 +110,4 @@ function App() {
 
 
 export default App;
+ 
